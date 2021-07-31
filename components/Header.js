@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import gsap from "gsap";
 import { useOnClickOutside } from "./hooks";
@@ -23,10 +24,23 @@ const Header = () => {
         opacity: 1,
         duration: 0.25,
         delay: 0.7,
-        stagger: 0.1,
+        stagger: 0.075,
       });
     }
   };
+
+  useEffect(() => {
+    const headerElement = document.getElementById("header");
+    const headerAppear = gsap.timeline();
+    headerAppear
+      .set(headerElement, { opacity: 0, transform: "translatey(-12px)" })
+      .to(headerElement, {
+        opacity: 1,
+        duration: 0.5,
+        delay: 1,
+        transform: "translatey(0)",
+      });
+  }, []);
   return (
     <header id="header">
       <div className="left-icon">
