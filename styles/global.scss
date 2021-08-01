@@ -9,8 +9,14 @@
   0%{
     transform: translatey(0);
   }
-  25%{
+
+  12% {
     transform: translatey(-12px);
+
+
+  }
+  25%{
+    transform: translatey(0);
   }
 
   50%{
@@ -29,19 +35,7 @@
 }
 
 #home-hero {
-  position:relative;
-  background: #7f7fd5; /* fallback for old browsers */
-  // background: -webkit-linear-gradient(
-  //   to right,
-  //   #91eae4,
-  //   #86a8e7,
-  //   #7f7fd5
-  // ); /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(
-  //   to right,
-  //   $primary,
-  //   $secondary
-  // );
+  position:relative; 
   background-color: $white;
   .hero-image-container {
     min-width:300px;
@@ -65,7 +59,7 @@
     bottom:24px;
     right: 24px;
     // text-transform: translatex(-50%);
-    animation: scrollBtn 5s  linear infinite;
+    animation: scrollBtn 4s  linear infinite;
   }
 }
 
