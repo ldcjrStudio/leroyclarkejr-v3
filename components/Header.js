@@ -43,8 +43,8 @@ const Header = () => {
   }, []);
   return (
     <header id="header">
-      <div className="left-icon">
-        <Link href="/">Leroy Clarke Jr.</Link>
+      <div className="left-icon font-bold">
+        <Link href="/">LC</Link>
       </div>
 
       <div id="nav" ref={node}>

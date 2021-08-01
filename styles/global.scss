@@ -1,4 +1,58 @@
-@import "./variables";
+@import "./_variables";
+@import "./_typography";
+
+.header-margin {
+  margin-top:86px !important;
+}
+
+@keyframes scrollBtn {
+  0%{
+    transform: translatey(0);
+  }
+  25%{
+    transform: translatey(-12px);
+  }
+
+  50%{
+    transform: translatey(0);
+  }
+
+  100% {
+    transform: translatey(0);
+
+  }
+}
+
+#layout-content {
+  max-width: 1440px;
+  margin:0 auto;
+}
+
+#home-hero {
+  position:relative;
+  background: #7f7fd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #91eae4,
+    #86a8e7,
+    #7f7fd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    $primary,
+    $secondary
+  );
+
+ 
+  #scroll-btn {
+    position: absolute;
+    bottom:24px;
+    left: 50%;
+    text-transform: translatex(-50%);
+    animation: scrollBtn 5s  linear infinite;
+  }
+}
+
 #header {
   position: fixed !important;
   top: 0;
