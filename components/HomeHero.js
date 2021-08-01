@@ -21,6 +21,7 @@ const HomeHero = ()=> {
         //       duration:.5, repeat:-1
 
         //   })
+       
     },[])
 
     return (
@@ -28,7 +29,7 @@ const HomeHero = ()=> {
 
             
                 <div className="hero-image-container mt-2 md:mt-8 mb-8">
-                <Image src="/images/leroyclarkejr.jpg" layout="fill"className="rounded-sm image"/>
+                <Image src="/images/leroyclarkejr.jpg" layout="fill"className="rounded-sm image" placeholder="blue"/>
                 </div>
 
             
