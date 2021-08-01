@@ -1,5 +1,6 @@
 import TypeIt from "typeit";
 import {useEffect} from "react"
+import Image from "next/image"
 import gsap from "gsap";
 
 
@@ -9,7 +10,7 @@ const HomeHero = ()=> {
         new TypeIt("#typeit", {
             speed: 50,
             loop: true
-          }).pause(500).type( "Self-taught Front-end Engineer.").pause(1500).delete().type("Former Pro Gymnast.").pause(1500).delete().type("Creative Problem Solver.").pause(1500).go();
+          }).pause(1000).type( "Self-taught Front-end Engineer.").pause(1500).delete().type("Former Pro Gymnast.").pause(1500).delete().type("Creative Problem Solver.").pause(1500).go();
 
 
         //   const scrollBtn = document.getElementById("scroll-btn");
@@ -23,11 +24,18 @@ const HomeHero = ()=> {
     },[])
 
     return (
-        <section id="home-hero" className="w-full h-screen flex justify-center items-start pt-24">
+        <section id="home-hero" className="w-full h-screen flex flex-col justify-start items-center pt-24 px-4">
 
-            <div className="content header-margin text-center w-full">
-                <h1 className="pb-6">Leroy Clarke Jr.</h1>
-                <h4 id="typeit"></h4>
+            
+                <div className="hero-image-container mt-2 md:mt-8 mb-8">
+                <Image src="/images/leroyclarkejr.jpg" layout="fill"className="rounded-sm image"/>
+                </div>
+
+            
+
+            <div className="content text-center w-full">
+                <h1 className="mb-2">Leroy Clarke Jr.</h1>
+                <p id="typeit" className="text-xl"></p>
             </div>
                 <div id="scroll-btn" className="scroll">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">

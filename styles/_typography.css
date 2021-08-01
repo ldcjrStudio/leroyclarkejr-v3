@@ -27,5 +27,8 @@
     p {
       @apply text-base;
     }
+    a{
+      @apply font-bold;
+    }
   }
   
