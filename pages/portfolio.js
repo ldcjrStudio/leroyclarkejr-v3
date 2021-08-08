@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
+// import Link from "next/link";
+// import Layout from "../components/Layout";
 
-import { getDatabase } from "../lib/notion";
+// import { getDatabase } from "../lib/notion";
 
-const databaseId = process.env.NOTION_DATABASE_ID;
+// const databaseId = process.env.NOTION_DATABASE_ID;
 
 const Portfolio = ({ projects }) => {
   console.log(projects);
@@ -65,13 +65,13 @@ const Portfolio = ({ projects }) => {
 
 export default Portfolio;
 
-export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
-  console.log(database);
-  return {
-    props: {
-      projects: database,
-    },
-    revalidate: 1,
-  };
-};
+// export const getStaticProps = async () => {
+//   const database = await getDatabase(databaseId);
+//   console.log(database);
+//   return {
+//     props: {
+//       projects: database,
+//     },
+//     revalidate: 1,
+//   };
+// };
