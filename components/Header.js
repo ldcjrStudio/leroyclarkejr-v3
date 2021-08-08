@@ -104,7 +104,7 @@ const Header = () => {
           }}
         >
           <div className="internal-links">
-            <Link href="/about" activeClassName="active">
+            <Link href="/" activeClassName="active">
               About
             </Link>
             <Link href="/portfolio" activeClassName="active">

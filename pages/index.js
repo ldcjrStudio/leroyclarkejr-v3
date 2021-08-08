@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout>
       <HomeHero />
-      <section id="about">
+      <section id="about" className="my-16">
         <div className="container flex justify-center mx-auto">
           <div className=" max-w-lg">
             <p>
@@ -56,7 +56,7 @@ export default function Home() {
                     className=" mb-6 mx-4 flex-col justify-center items-center text-center"
                   >
                     {React.cloneElement(skill.icon, {
-                      className: "icon w-16 flex-grow",
+                      className: "icon h-16 mx-auto flex-grow mb-2",
                     })}
                     <p>{skill.name}</p>
                   </li>

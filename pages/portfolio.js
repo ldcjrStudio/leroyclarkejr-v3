@@ -62,13 +62,13 @@ const Portfolio = ({ projects }) => {
 
 export default Portfolio;
 
-export const getStaticProps = async () => {
-  const database = await getDatabase(databaseId);
-  console.log(database);
-  return {
-    props: {
-      projects: database,
-    },
-    revalidate: 1,
-  };
-};
+// export const getStaticProps = async () => {
+//   const database = await getDatabase(databaseId);
+//   console.log(database);
+//   return {
+//     props: {
+//       projects: database,
+//     },
+//     revalidate: 1,
+//   };
+// };

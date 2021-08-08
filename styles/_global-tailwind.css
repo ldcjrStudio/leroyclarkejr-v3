@@ -1,7 +1,10 @@
 @tailwind base;
 
 @layer base {
-    body{
-        @apply bg-white dark:bg-black
-    }
+  body {
+    @apply bg-white dark:bg-black;
+  }
+  section {
+    @apply mx-4;
+  }
 }

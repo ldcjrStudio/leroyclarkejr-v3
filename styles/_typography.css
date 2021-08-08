@@ -28,7 +28,7 @@
     @apply text-lg;
   }
   p {
-    @apply text-base text-gray-600 dark:text-gray-400 mb-2;
+    @apply text-base text-gray-600 dark:text-gray-400 mb-4;
   }
   a {
     @apply font-bold dark:text-white;
