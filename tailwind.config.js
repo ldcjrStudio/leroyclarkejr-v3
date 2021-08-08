@@ -1,19 +1,21 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: "media", // or 'media' or 'class'
+  mode: "jit",
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-    //   fontFamily: {
-    //   sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-    // },
-  },
+      colors: {
+        primary: "#0066f5",
+        secondary: "#0ae0eb",
+        offBlack: "#151515",
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};
 // const colors = require('tailwindcss/colors')
 
 // module.exports = {

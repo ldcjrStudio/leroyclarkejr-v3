@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import gsap from "gsap";
 import { useOnClickOutside } from "./hooks";
+import DarkModeToggle from "./DarkModeToggle";
 
 //ICONS
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -29,25 +30,29 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
-    const headerElement = document.getElementById("header");
-    const headerAppear = gsap.timeline();
-    headerAppear
-      .set(headerElement, { opacity: 0, transform: "translatey(-12px)" })
-      .to(headerElement, {
-        opacity: 1,
-        duration: 0.5,
-        delay: 1,
-        transform: "translatey(0)",
-      });
-  }, []);
+  // useEffect(() => {
+  //   const headerElement = document.getElementById("header");
+  //   const headerAppear = gsap.timeline();
+  //   headerAppear
+  //     .set(headerElement, { opacity: 0, transform: "translatey(-12px)" })
+  //     .to(headerElement, {
+  //       opacity: 1,
+  //       duration: 0.5,
+  //       delay: 1,
+  //       transform: "translatey(0)",
+  //     });
+  // }, []);
   return (
-    <header id="header">
-      <div className="left-icon font-bold">
+    <header
+      id="header"
+      className="bg-white bg-opacity-40 dark:bg-transparent transition-all duration-150"
+    >
+      <div className="left-icon font-bold text-black dark:text-white">
         <Link href="/">LC</Link>
       </div>
 
       <div id="nav" ref={node}>
+        <DarkModeToggle />
         <button
           className="nav-button"
           open={open}
@@ -55,17 +60,20 @@ const Header = () => {
           aria-label="open navigation menu"
         >
           <div
+            className={` ${open ? "bg-white " : "bg-black dark:bg-white"}`}
             style={{
               transform: open ? "rotate(45deg)" : "rotate(0)",
             }}
           />
           <div
+            className="bg-black dark:bg-white"
             style={{
               opacity: open ? "0" : "1",
               transform: open ? "translateX(-20px)" : "translateX(0)",
             }}
           />
           <div
+            className={` ${open ? "bg-white " : "bg-black dark:bg-white"}`}
             style={{
               transform: open ? "rotate(-45deg)" : "rotate(0)",
             }}
@@ -74,36 +82,33 @@ const Header = () => {
         <nav
           className="fake-back nav-menu"
           style={{
-            boxShadow: open ? "-5px 0px 10px #151515" : "none",
             transform: open ? "translatex(0)" : "translatex(100%)",
             transitionDelay: open ? "0s" : ".2s",
           }}
         ></nav>
         <nav
-          className="fake-mid nav-menu"
+          className="fake-mid nav-menu bg-primary dark:bg-secondary"
           style={{
-            boxShadow: open ? "-5px 0px 10px #151515" : "none",
             transform: open ? "translatex(0)" : "translatex(100%)",
             transitionDelay: open ? ".1s" : ".1s",
           }}
         ></nav>
 
         <nav
-          className="nav-menu main-nav-menu "
+          className="nav-menu main-nav-menu bg-offBlack"
           open={open}
           // style={{ transform: open ? "translatey(0)" : "translatey(-100%)" }}
           style={{
-            boxShadow: open ? "-5px 0px 10px #151515" : "none",
             transform: open ? "translatex(0)" : "translatex(100%)",
             transitionDelay: open ? ".2s" : "0s",
           }}
         >
           <div className="internal-links">
-            <Link href="/" activeClassName="active">
-              Work
-            </Link>
-            <Link href="/about/" activeClassName="active">
+            <Link href="/about" activeClassName="active">
               About
+            </Link>
+            <Link href="/portfolio" activeClassName="active">
+              Portfolio
             </Link>
             <a
               href="https://personal-things.s3.amazonaws.com/LeroyClarkeJrResume.pdf"
