@@ -47,8 +47,8 @@ export default function Home() {
 
       <section className="tech-stack">
         <div className="container mx-auto">
-          <div className="heading flex justify-items-start max-w-lg mx-auto">
-            <h2 className="mb-8">My Tech Stack</h2>
+          <div className="heading flex justify-center max-w-lg mx-auto">
+            <h3 className="mb-8">My Tech Stack</h3>
           </div>
           <div className="my-tech-stack flex justify-center">
             <ul className="max-w-lg flex justify-evenly flex-row flex-wrap">
@@ -56,12 +56,12 @@ export default function Home() {
                 return (
                   <li
                     key={skill.key}
-                    className=" mb-6 mx-4 flex-col justify-center items-center text-center"
+                    className=" my-4 mx-4 flex-col justify-center items-center text-center"
                   >
                     {React.cloneElement(skill.icon, {
-                      className: "icon h-16 mx-auto flex-grow mb-2",
+                      className: "icon w-16 max-h-16 mx-auto flex-grow mb-2",
                     })}
-                    <p>{skill.name}</p>
+                    <p className="text-base">{skill.name}</p>
                   </li>
                 );
               })}

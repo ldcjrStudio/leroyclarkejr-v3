@@ -3,6 +3,10 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class", // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      serif: ["Helvetica", "Arial", "sans-serif"],
+      body: ["SourceSansPro", "Arial", "sans-serif"],
+    },
     extend: {
       colors: {
         primary: "#0066f5",
