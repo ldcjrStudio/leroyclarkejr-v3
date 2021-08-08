@@ -38,7 +38,7 @@ const HomeHero = () => {
   return (
     <section
       id="home-hero"
-      className="w-full min-h-screen flex flex-col items-center justify-center px-4 bg-white dark:bg-black mx-0"
+      className="w-full min-h-screen h-screen flex flex-col items-center justify-center px-4 bg-white dark:bg-black mx-0"
     >
       <div className="hero-image-container mt-2 md:mt-8 mb-8">
         <Image
