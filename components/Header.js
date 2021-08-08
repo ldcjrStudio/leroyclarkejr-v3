@@ -111,7 +111,7 @@ const Header = () => {
               Portfolio
             </Link>
             <a
-              href="https://personal-things.s3.amazonaws.com/LeroyClarkeJrResume.pdf"
+              href="https://personal-things.s3.amazonaws.com/LeroyClarkejr-Aug.pdf"
               target="_blank"
             >
               Resume
