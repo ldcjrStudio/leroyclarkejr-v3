@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import HomeHero from "../components/HomeHero";
+import Hr from "../components/Hr";
 
 import { skills } from "../lib/skills";
 
@@ -10,14 +11,15 @@ export default function Home() {
   return (
     <Layout>
       <HomeHero />
-      <section id="about" className="my-16">
+      <Hr />
+      <section id="about" className="">
         <div className="container flex justify-center mx-auto">
-          <div className=" max-w-lg">
-            <p>
-              👋🏾 I'm Leroy - A self taught Front-end Engineering living in New
+          <div className="max-w-lg">
+            <h4 className="mb-6">
+              👋🏾 I'm Leroy, a self taught Front-end Engineering living in New
               Jersey.
-            </p>
-            <p>
+            </h4>
+            <p className="mb-4">
               I ultimately learned ot coe because of my love for technology and
               appreciation for digital multimedia art. I want to work with
               creative people that want a website or application to go along
@@ -25,27 +27,28 @@ export default function Home() {
               brand is about. My goal is to give creativees a place where your
               fans and ollowers can find you latest content.{" "}
             </p>
-            <p>
+            <p className="mb-4">
               I see web development as my opportunity to unleash my creativity
               while also challenging myself technically.
             </p>
-            <p>
+            <p className="mb-4">
               Aside from web development my interests include fitness, music,
               personal finance, and entreprenuership.
             </p>
-            <p>
+            <p className="mb-4">
               Pairing my coding skillset with my knowledge in brand strategy, UI
               design, SEO, I build modern, aesthetically pleasing websites for
               ambitious people and brands.
             </p>
-            <p>Hit me up to collaborate, chat or</p>
           </div>
         </div>
       </section>
+      <Hr />
+
       <section className="tech-stack">
         <div className="container mx-auto">
-          <div className="max-w-lg heading flex justify-center">
-            <h2 className="mb-6">My Tech Stack</h2>
+          <div className="heading flex justify-items-start max-w-lg mx-auto">
+            <h2 className="mb-8">My Tech Stack</h2>
           </div>
           <div className="my-tech-stack flex justify-center">
             <ul className="max-w-lg flex justify-evenly flex-row flex-wrap">

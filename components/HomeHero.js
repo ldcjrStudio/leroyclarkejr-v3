@@ -7,7 +7,7 @@ import me from "../public/images/leroyclarkejr.jpg";
 const HomeHero = () => {
   useEffect(() => {
     new TypeIt("#typeit", {
-      speed: 50,
+      speed: 45,
       loop: true,
     })
       .pause(1000)

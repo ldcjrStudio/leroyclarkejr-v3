@@ -1,5 +1,5 @@
 // import Link from "next/link";
-// import Layout from "../components/Layout";
+import Layout from "../components/Layout";
 
 // import { getDatabase } from "../lib/notion";
 
@@ -8,9 +8,12 @@
 const Portfolio = ({ projects }) => {
   console.log(projects);
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <Layout>
+      <div>
+        <h1>hello</h1>
+      </div>
+    </Layout>
+
     // <Layout>
     //   <section id="portfolio">
     //     <div className="projects container">

@@ -5,6 +5,6 @@
     @apply bg-white dark:bg-black;
   }
   section {
-    @apply mx-4;
+    @apply mx-6;
   }
 }
