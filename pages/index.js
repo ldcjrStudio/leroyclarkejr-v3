@@ -12,7 +12,7 @@ export default function Home() {
     <Layout>
       <HomeHero />
       <Hr />
-      <section id="about" className="">
+      <section id="about" className="pb-12">
         <div className="container flex justify-center mx-auto">
           <div className="max-w-lg">
             <h4 className="mb-6">
@@ -43,7 +43,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Hr />
+      {/* <Hr /> */}
 
       <section className="tech-stack">
         <div className="container mx-auto">
