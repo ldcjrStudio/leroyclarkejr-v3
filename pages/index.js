@@ -51,12 +51,12 @@ export default function Home() {
             <h3 className="mb-8">My Tech Stack</h3>
           </div>
           <div className="my-tech-stack flex justify-center">
-            <ul className="max-w-lg flex justify-evenly flex-row flex-wrap">
+            <ul className="max-w-lg flex justify-center flex-row flex-wrap">
               {skills.map((skill) => {
                 return (
                   <li
                     key={skill.key}
-                    className=" my-4 mx-4 flex-col justify-center items-center text-center"
+                    className=" my-4 mx-6 flex-col justify-center items-center text-center"
                   >
                     {React.cloneElement(skill.icon, {
                       className: "icon w-16 max-h-16 mx-auto flex-grow mb-2",

@@ -28,7 +28,7 @@
     @apply text-base;
   }
   p {
-    @apply text-base md:text-lg font-body leading-3 text-gray-600 dark:text-gray-400;
+    @apply text-base md:text-lg font-body leading-5 text-gray-600 dark:text-gray-400;
   }
   a {
     @apply font-bold dark:text-white;
