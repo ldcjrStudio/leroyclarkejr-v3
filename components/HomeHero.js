@@ -45,13 +45,12 @@ const HomeHero = () => {
           layout="fill"
           className="rounded-sm image"
           placeholder="blur"
-          //   blueDataUrl="base64"
         />
       </div>
 
       <div className="content text-center w-full">
         <h1 className="mb-2">Leroy Clarke Jr.</h1>
-        <p id="typeit" className="text-xl"></p>
+        <p id="typeit" className=" text-base md:text-xl"></p>
       </div>
       <div
         id="scroll-btn"

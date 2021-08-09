@@ -2,14 +2,9 @@
 @import "./_global-tailwind.css";
 @import "./_typography";
 
-html {
-  height: -webkit-fill-available;
-}
 body {
   background-color: #fff;
   scroll-behavior: smooth;
-  min-height: -webkit-fill-available;
-  height: -webkit-fill-available;
 
   &.dark {
     background-color: #000;
@@ -71,7 +66,7 @@ body {
 
 #home-hero {
   position: relative;
-  // min-height: -webkit-fill-available;
+  height: 100vh -webkit-fill-available;
 
   // @media only screen and (max-device-width: 768px) {
   //   height: -webkit-fill-available;
@@ -80,6 +75,10 @@ body {
   .hero-image-container {
     min-width: 300px;
     max-width: 400px;
+    @media (max-width: 420px) {
+      min-width: 220px;
+      max-width: 250px;
+    }
     > div {
       position: unset !important;
     }

@@ -17,8 +17,8 @@ const Header = () => {
   useOnClickOutside(node, () => setOpen(false));
 
   const handleNavOpen = () => {
-    const navMenuItems = document.querySelectorAll("nav a");
     setOpen(!open);
+    const navMenuItems = document.querySelectorAll("nav a");
     if (open === false) {
       const menuAppear = gsap.timeline();
       menuAppear.set(navMenuItems, { opacity: 0 }).to(navMenuItems, {
@@ -27,6 +27,10 @@ const Header = () => {
         delay: 0.7,
         stagger: 0.075,
       });
+
+      document.querySelector("body").style.overflowY = "hidden";
+    } else {
+      document.querySelector("body").style.overflowY = "scroll";
     }
   };
 
