@@ -1,80 +1,76 @@
 // import Link from "next/link";
 import Layout from "../components/Layout";
+import getProjects from "../lib/airtable";
+import Image from "next/image";
 
-// import { getDatabase } from "../lib/notion";
-
-// const databaseId = process.env.NOTION_DATABASE_ID;
-
-const Portfolio = ({ projects }) => {
+export default function Portfolio({ projects }) {
   console.log(projects);
+
   return (
     <Layout>
-      <div>
-        <h1>hello</h1>
-      </div>
+      <section id="portfolio" className="pt-24">
+        <div className="heading w-full text-center mb-8">
+          <h2 className="">My Portfolio</h2>
+        </div>
+        <div className="container w-full mx-auto">
+          <div className="projects-container w-full flex justify-center flex-wrap">
+            {projects.map((project) => (
+              <div
+                className="project max-w-xs p-0 m-6 border-black dark:border-white border-2 box-border flex-grow"
+                key={Math.floor(Math.random() * 100)}
+              >
+                <div className="container">
+                  <div className="img-container w-300px h-100">
+                    <Image
+                      src={project.fields.Photos[0].url}
+                      layout="responsive"
+                      width={project.fields.Photos[0].width}
+                      height={project.fields.Photos[0].height}
+                    />
+                  </div>
+
+                  <div className="project-copy p-6">
+                    <h4 className="mb-2">{project.fields.Name}</h4>
+                    <p>{project.fields.Description}</p>
+                    <h5 className="mt-3">Stack</h5>
+                    <p>{project.fields.Stack}</p>
+                    {project.fields.Url === "#" ? (
+                      <span className="my-button url-link">Coming soon!</span>
+                    ) : (
+                      <a
+                        href={project.fields.Url}
+                        className="url-link my-button flex flex-nowrap flex-row mt-3"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5 mr-1"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                            clipRule="evenodd"
+                          />
+                        </svg>{" "}
+                        See live
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </Layout>
-
-    // <Layout>
-    //   <section id="portfolio">
-    //     <div className="projects container">
-    //       {projects.map((project) => (
-    //         <div className="project" key={Math.floor(Math.random() * 100)}>
-    //           <div className="container">
-    //             <div className="image">
-    //               {/* <img src={project.img} alt={project.title} /> */}
-
-    //               {/* <Img
-    //                 // style={{ width: "100%", height: "100%" }}
-    //                 fluid={
-    //                   project.img === "tb"
-    //                     ? data.tb.childImageSharp.fluid
-    //                     : project.img === "jiffy"
-    //                     ? data.jiffy.childImageSharp.fluid
-    //                     : project.img === "fifty"
-    //                     ? data.fifty.childImageSharp.fluid
-    //                     : project.img === "valencia"
-    //                     ? data.valencia.childImageSharp.fluid
-    //                     : project.img === "pv1"
-    //                     ? data.pv1.childImageSharp.fluid
-    //                     : data.nt.childImageSharp.fluid
-    //                 }
-    //                 // fluid={`${data.tb.childImageSharp.fluid}`}
-    //               /> */}
-    //             </div>
-
-    //             <div className="project-copy">
-    //               <h4>{project.title}</h4>
-    //               <p>{project.Description}</p>
-    //               <h5>Stack</h5>
-    //               <ul>
-    //                 <li>{project.Stack}</li>
-    //               </ul>
-    //               {project.url === "#" ? (
-    //                 <span className="my-button url-link">Coming soon!</span>
-    //               ) : (
-    //                 <a href={project.url} className="url-link my-button">
-    //                   See live
-    //                 </a>
-    //               )}
-    //             </div>
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </section>
-    // </Layout>
   );
-};
+}
 
-export default Portfolio;
+export async function getStaticProps({}) {
+  const projects = await getProjects();
 
-// export const getStaticProps = async () => {
-//   const database = await getDatabase(databaseId);
-//   console.log(database);
-//   return {
-//     props: {
-//       projects: database,
-//     },
-//     revalidate: 1,
-//   };
-// };
+  return {
+    props: { projects },
+  };
+}

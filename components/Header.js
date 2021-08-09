@@ -28,9 +28,9 @@ const Header = () => {
         stagger: 0.075,
       });
 
-      document.querySelector("body").style.overflowY = "hidden";
+      // document.querySelector("body").style.overflowY = "hidden";
     } else {
-      document.querySelector("body").style.overflowY = "scroll";
+      // document.querySelector("body").style.overflowY = "scroll";
     }
   };
 

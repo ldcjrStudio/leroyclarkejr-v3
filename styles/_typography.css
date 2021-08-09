@@ -27,7 +27,8 @@
   h6 {
     @apply text-base;
   }
-  p {
+  p,
+  li {
     @apply text-base md:text-lg font-body leading-5 text-gray-600 dark:text-gray-400;
   }
   a {
