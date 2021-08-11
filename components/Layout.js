@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
             "Self taught Front-end Engineer helping ambitious people and brands create aesthetically pleasing web app experiences.",
           images: [
             {
-              url: "leroyclarkejr.com/images/leroyclarkejr.jpg",
+              url: "https://www.leroyclarkejr.com/images/leroyclarkejr.jpg",
               width: "800",
               height: "772",
               alt: "Leroy Clarke Jr. in black and white.",
