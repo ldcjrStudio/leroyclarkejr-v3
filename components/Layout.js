@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
             {
               url: "www.leroyclarkejr.com/images/leroyclarkejr.jpg",
               width: "800",
-              height: "772",
+              height: "600",
               alt: "Leroy Clarke Jr. in black and white.",
             },
           ],
