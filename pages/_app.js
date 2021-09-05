@@ -5,6 +5,7 @@ import "tailwindcss/tailwind.css";
 import "../styles/global.scss";
 
 import Head from "next/head";
+import Layout from "../components/Layout";
 
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
@@ -24,7 +25,7 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <>
+    <Layout>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="theme-color" content="#0066f5" />
@@ -50,7 +51,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
 }
 

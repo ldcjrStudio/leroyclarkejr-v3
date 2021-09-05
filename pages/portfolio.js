@@ -4,10 +4,9 @@ import getProjects from "../lib/airtable";
 import Image from "next/image";
 
 export default function Portfolio({ projects }) {
-  // console.log(projects);
 
   return (
-    <Layout>
+    <>
       <section id="portfolio" className="pt-24">
         <div className="heading w-full text-center mb-8">
           <h2 className="">My Portfolio</h2>
@@ -63,7 +62,7 @@ export default function Portfolio({ projects }) {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
 

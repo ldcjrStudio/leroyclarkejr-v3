@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/router";
+// import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import gsap from "gsap";
 import { useOnClickOutside } from "./hooks";
@@ -12,6 +13,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 const Header = () => {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
@@ -27,25 +29,14 @@ const Header = () => {
         delay: 0.7,
         stagger: 0.075,
       });
-
-      // document.querySelector("body").style.overflowY = "hidden";
-    } else {
-      // document.querySelector("body").style.overflowY = "scroll";
     }
   };
+  const changeRoute = (e) => {
+    e.preventDefault();
+    setOpen(false);
+    router.push(e.target.href);
+  };
 
-  // useEffect(() => {
-  //   const headerElement = document.getElementById("header");
-  //   const headerAppear = gsap.timeline();
-  //   headerAppear
-  //     .set(headerElement, { opacity: 0, transform: "translatey(-12px)" })
-  //     .to(headerElement, {
-  //       opacity: 1,
-  //       duration: 0.5,
-  //       delay: 1,
-  //       transform: "translatey(0)",
-  //     });
-  // }, []);
   return (
     <header
       id="header"
@@ -108,12 +99,12 @@ const Header = () => {
           }}
         >
           <div className="internal-links">
-            <Link href="/" activeClassName="active">
+            <a href="/" onClick={changeRoute}>
               About
-            </Link>
-            <Link href="/portfolio" activeClassName="active">
+            </a>
+            <a href="/portfolio" onClick={changeRoute}>
               Portfolio
-            </Link>
+            </a>
             <a
               href="https://personal-things.s3.amazonaws.com/LeroyClarkejr-Aug.pdf"
               target="_blank"
@@ -137,6 +128,7 @@ const Header = () => {
               <a
                 target="_blank"
                 href="https://github.com/ldcjrStudio"
+
                 // to="https://github.com/ldcjrStudio"
               >
                 <GitHubIcon fontSize="large" />

@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import me from "../public/images/leroyclarkejr.jpg";
+// import smoothscroll from "smoothscroll-polyfill";
+// smoothscroll.polyfill();
 
 const HomeHero = () => {
   useEffect(() => {
@@ -56,9 +58,9 @@ const HomeHero = () => {
         id="scroll-btn"
         className="scroll"
         onClick={() => {
-          document.getElementById("scroll-btn").scrollIntoView({
-            behavior: "smooth",
-          });
+          document
+            .querySelector("#about")
+            .scrollIntoView({ behavior: "smooth" });
         }}
       >
         <svg
