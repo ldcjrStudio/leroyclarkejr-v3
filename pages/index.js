@@ -1,6 +1,6 @@
 import React from "react";
+import Link from "next/link";
 
-import Head from "next/head";
 import Layout from "../components/Layout";
 import HomeHero from "../components/HomeHero";
 import Hr from "../components/Hr";
@@ -46,29 +46,25 @@ export default function Home({ posts }) {
         <div className="container flex justify-center mx-auto">
           <div className="max-w-lg">
             <h4 className="mb-6">
-              👋🏾 I'm Leroy, a self taught Front-end Engineering living in New
+              👋🏾 I'm Leroy, a self taught Front-end Engineer living in New
               Jersey.
             </h4>
             <p className="mb-4">
-              I ultimately learned ot coe because of my love for technology and
-              appreciation for digital multimedia art. I want to work with
-              creative people that want a website or application to go along
-              with their creative personality and really speaks to what their
-              brand is about. My goal is to give creativees a place where your
-              fans and ollowers can find you latest content.{" "}
-            </p>
-            <p className="mb-4">
-              I see web development as my opportunity to unleash my creativity
-              while also challenging myself technically.
+              I ultimately learned to code because of my love for technology and
+              appreciation for digital multimedia art. I see web development as
+              my opportunity to unleash my creativity while also challenging
+              myself technically. Right now, I'm focused on building modern,
+              aesthetically pleasing websites for ambitious people and brands.
+              Check out my work, <Link href="portfolio"> here</Link>.
             </p>
             <p className="mb-4">
               Aside from web development my interests include fitness, music,
               personal finance, and entreprenuership.
             </p>
             <p className="mb-4">
-              Pairing my coding skillset with my knowledge in brand strategy, UI
-              design, SEO, I build modern, aesthetically pleasing websites for
-              ambitious people and brands.
+              <a href="mailto:hello@leroyclarkejr.com">Hit me up </a>if you're
+              looking for a developer, have any questions, or just want to
+              connect. ✌🏾
             </p>
           </div>
         </div>
