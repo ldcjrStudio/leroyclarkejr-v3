@@ -54,7 +54,7 @@ export default function Home({ posts }) {
               my opportunity to unleash my creativity while also challenging
               myself technically. Right now, I'm focused on building modern,
               aesthetically pleasing websites for ambitious people and brands.
-              Check out my work, <Link href="portfolio"> here</Link>.
+              Check out my work, <Link href="/portfolio"> here</Link>.
             </p>
             <p className="mb-4">
               Aside from web development my interests include fitness, music,

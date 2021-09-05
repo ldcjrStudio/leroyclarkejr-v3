@@ -4,7 +4,6 @@ import getProjects from "../lib/airtable";
 import Image from "next/image";
 
 export default function Portfolio({ projects }) {
-
   return (
     <>
       <section id="portfolio" className="pt-24">
@@ -16,7 +15,7 @@ export default function Portfolio({ projects }) {
             {projects.map((project) => (
               <div
                 className="project max-w-xs p-0 m-6 border-black dark:border-white border-2 box-border flex-grow"
-                key={Math.floor(Math.random() * 100)}
+                key={project.fields.Name}
               >
                 <div className="container">
                   <div className="img-container w-300px h-100">
@@ -25,6 +24,8 @@ export default function Portfolio({ projects }) {
                       layout="responsive"
                       width={project.fields.Photos[0].width}
                       height={project.fields.Photos[0].height}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpg;png"
                     />
                   </div>
 
