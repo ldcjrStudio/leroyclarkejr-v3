@@ -7,14 +7,20 @@ function classNames(...classes) {
 
 export default function Example() {
   const [enabled, setEnabled] = useState(true);
+  // if (typeof window !== "undefined") {
+  //   const localTheme = localStorage.getItem("theme");
+  //   // setEnabled(localTheme);
+  //   setEnabled(false);
+
+  // }
 
   useEffect(() => {
-    if (enabled == true) {
+    if (enabled === true) {
       document.querySelector("body").classList.add("dark");
-      console.log("dark");
+      // localStorage.setItem("theme", "true");
     } else {
       document.querySelector("body").classList.remove("dark");
-      console.log("NOTTdark");
+      // localStorage.setItem("theme", "false");
     }
   }, [enabled]);
 

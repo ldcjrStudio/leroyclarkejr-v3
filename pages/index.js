@@ -4,14 +4,44 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import HomeHero from "../components/HomeHero";
 import Hr from "../components/Hr";
+import Link from "next/link";
 
+// import { Text } from "../pages/blog/[id].js";
+// import { getDatabase } from "../lib/notion";
 import { skills } from "../lib/skills";
 
-export default function Home() {
+export const databaseId = process.env.NOTION_DATABASE_ID;
+
+export default function Home({ posts }) {
   return (
-    <Layout>
+    <>
       <HomeHero />
       <Hr />
+      <section>
+        {/* {posts.map((post) => {
+          const date = new Date(post.last_edited_time).toLocaleString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+          });
+          return (
+            <li key={post.id}>
+              <h3>
+                <Link href={`/blog/${post.id}`}>
+                  <a>
+                    <Text text={post.properties.Name.title} />
+                  </a>
+                </Link>
+              </h3>
+
+              <p>{date}</p>
+              <Link href={`/blog/${post.id}`}>
+                <a> Read post →</a>
+              </Link>
+            </li>
+          );
+        })} */}
+      </section>
       <section id="about" className="pb-12">
         <div className="container flex justify-center mx-auto">
           <div className="max-w-lg">
@@ -69,6 +99,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
+
+// export const getStaticProps = async () => {
+//   const database = await getDatabase(databaseId);
+//   console.log(database[0]);
+//   return {
+//     props: {
+//       posts: database,
+//     },
+//     revalidate: 1,
+//   };
+// };
