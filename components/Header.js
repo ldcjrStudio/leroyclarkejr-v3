@@ -102,7 +102,7 @@ const Header = () => {
             <a href="/" onClick={changeRoute}>
               About
             </a>
-            <a href="/portfolio" onClick={changeRoute}>
+            <a href="portfolio" onClick={changeRoute}>
               Portfolio
             </a>
             <a
