@@ -4,7 +4,6 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import HomeHero from "../components/HomeHero";
 import Hr from "../components/Hr";
-import Link from "next/link";
 
 // import { Text } from "../pages/blog/[id].js";
 // import { getDatabase } from "../lib/notion";
