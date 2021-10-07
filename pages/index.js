@@ -1,17 +1,17 @@
 import React from "react";
 import Link from "next/link";
 
-import Layout from "../components/Layout";
 import HomeHero from "../components/HomeHero";
 import Hr from "../components/Hr";
 
-// import { Text } from "../pages/blog/[id].js";
-// import { getDatabase } from "../lib/notion";
+import { Text } from "../pages/blog/[id].js";
+import { getDatabase } from "../lib/notion";
 import { skills } from "../lib/skills";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
+  console.log(posts[0].properties);
   return (
     <>
       <HomeHero />
@@ -94,17 +94,54 @@ export default function Home({ posts }) {
           </div>
         </div>
       </section>
+      <section>
+        <div className="heading flex justify-center max-w-lg mx-auto">
+          <h3 className="mb-8">Blog</h3>
+        </div>
+        <div className="blogs-container">
+          <ul>
+            {posts.map((post) => {
+              if (post.properties.Status.select.name === "Live") {
+                const date = new Date(post.last_edited_time).toLocaleString(
+                  "en-US",
+                  {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  }
+                );
+                return (
+                  <li key={post.id}>
+                    <h3>
+                      <Link href={`/blog/${post.id}`}>
+                        <a>
+                          <Text text={post.properties.Name.title} />
+                        </a>
+                      </Link>
+                    </h3>
+
+                    <p>{date}</p>
+                    <Link href={`/blog/${post.id}`}>
+                      <a> Read post →</a>
+                    </Link>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </div>
+      </section>
     </>
   );
 }
 
-// export const getStaticProps = async () => {
-//   const database = await getDatabase(databaseId);
-//   console.log(database[0]);
-//   return {
-//     props: {
-//       posts: database,
-//     },
-//     revalidate: 1,
-//   };
-// };
+export const getStaticProps = async () => {
+  const database = await getDatabase(databaseId);
+
+  return {
+    props: {
+      posts: database,
+    },
+    revalidate: 1,
+  };
+};
