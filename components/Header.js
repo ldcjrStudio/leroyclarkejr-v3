@@ -103,7 +103,10 @@ const Header = () => {
           }}
         >
           <div className="internal-links">
-            <a href="/" onClick={changeRoute}>
+            <a href="/home" onClick={changeRoute}>
+              Home
+            </a>
+            <a href="/about" onClick={changeRoute}>
               About
             </a>
             <a href="portfolio" onClick={changeRoute}>
