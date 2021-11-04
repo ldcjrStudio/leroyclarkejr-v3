@@ -42,8 +42,12 @@ const Header = () => {
       id="header"
       className="bg-white bg-opacity-40 dark:bg-transparent transition-all duration-150"
     >
-      <div className="left-icon font-bold text-black dark:text-white">
-        <Link href="/">LC</Link>
+      <div className="left-icon ">
+        <Link href="/">
+          <a className="font-bold text-black dark:text-white">
+            Leroy Clarke Jr.
+          </a>
+        </Link>
       </div>
 
       <div id="nav" ref={node}>
@@ -82,7 +86,7 @@ const Header = () => {
           }}
         ></nav>
         <nav
-          className="fake-mid nav-menu bg-primary dark:bg-secondary"
+          className="fake-mid nav-menu bg-primary dark:bg-primary"
           style={{
             transform: open ? "translatex(0)" : "translatex(100%)",
             transitionDelay: open ? ".1s" : ".1s",

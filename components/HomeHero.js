@@ -51,7 +51,7 @@ const HomeHero = () => {
       </div>
 
       <div className="content text-center w-full">
-        <h1 className="mb-2">Leroy Clarke Jr.</h1>
+        {/* <h1 className="mb-2">Leroy Clarke Jr.</h1> */}
         <p id="typeit" className=" text-base md:text-xl"></p>
       </div>
       <div

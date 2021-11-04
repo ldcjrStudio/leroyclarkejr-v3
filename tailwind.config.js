@@ -9,9 +9,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#0066f5",
-        secondary: "#0ae0eb",
+        primary: "#ef2a33",
+        secondary: "#090a3b",
         offBlack: "#151515",
+        white: "#FCFEFC",
       },
     },
   },
@@ -20,34 +21,3 @@ module.exports = {
   },
   plugins: [],
 };
-// const colors = require('tailwindcss/colors')
-
-// module.exports = {
-//   theme: {
-//     colors: {
-//       gray: colors.coolGray,
-//       blue: colors.lightBlue,
-//       red: colors.rose,
-//       pink: colors.fuchsia,
-//     },
-//     fontFamily: {
-//       sans: ['Graphik', 'sans-serif'],
-//       serif: ['Merriweather', 'serif'],
-//     },
-//     extend: {
-//       spacing: {
-//         '128': '32rem',
-//         '144': '36rem',
-//       },
-//       borderRadius: {
-//         '4xl': '2rem',
-//       }
-//     }
-//   },
-//   variants: {
-//     extend: {
-//       borderColor: ['focus-visible'],
-//       opacity: ['disabled'],
-//     }
-//   }
-// }

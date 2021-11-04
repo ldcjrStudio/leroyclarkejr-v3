@@ -30,7 +30,7 @@ export default function Example() {
       checked={enabled}
       onChange={setEnabled}
       className={classNames(
-        enabled ? "bg-secondary" : "bg-primary",
+        enabled ? "bg-gray-400" : "bg-primary",
         "relative inline-flex flex-shrink-0 h-6 w-11 mr-6 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 "
       )}
     >
