@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import HomeHero from "../components/HomeHero";
 import Hr from "../components/Hr";
@@ -102,7 +103,15 @@ export default function Home({ posts }) {
           <ul>
             {posts.map((post) => {
               if (post.properties.Status.select.name === "Live") {
-                const date = new Date(post.last_edited_time).toLocaleString(
+                const lastDate = new Date(post.last_edited_time).toLocaleString(
+                  "en-US",
+                  {
+                    month: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  }
+                );
+                const ogDate = new Date(post.created_time).toLocaleString(
                   "en-US",
                   {
                     month: "short",
@@ -118,9 +127,11 @@ export default function Home({ posts }) {
                           <Text text={post.properties.Name.title} />
                         </a>
                       </Link>
+                      <p>Originally posted {ogDate}</p>
+                      <p>last updated {lastDate}</p>
                     </h3>
 
-                    <p>{date}</p>
+                    <p>{post.date}</p>
                     <Link href={`/blog/${post.id}`}>
                       <a> Read post →</a>
                     </Link>
