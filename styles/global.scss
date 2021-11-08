@@ -28,11 +28,14 @@
 }
 
 body {
-  background-color: #fff;
+  background-color: $white;
   scroll-behavior: smooth;
 
+  transition: all 0.2s;
+  transition-delay: 0.1s;
+
   &.dark {
-    background-color: #000;
+    background-color: $black;
   }
 }
 
@@ -40,19 +43,13 @@ body {
   margin-top: 86px !important;
 }
 
-#layout-content {
-  max-width: 1440px;
-  padding-top: 80px;
-  margin: 0 auto;
-}
-
 #home-hero {
   position: relative;
   height: 100vh -webkit-fill-available;
 
   .hero-image-container {
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 420px;
+    max-width: 600px;
     @media (max-width: 420px) {
       min-width: 220px;
       max-width: 250px;

@@ -16,9 +16,6 @@ const Layout = ({ children }) => {
             "Self taught Front-end Engineer helping ambitious people and brands create aesthetically pleasing web app experiences.",
           images: [
             {
-
-             
-
               url: "https://www.leroyclarkejr.com/images/leroyclarkejr.jpg",
 
               width: "800",
@@ -30,7 +27,9 @@ const Layout = ({ children }) => {
         }}
       />
       <Header />
-      <main id="layout-content">{children}</main>
+      <main id="layout-content" className="max-w-screen-xl mx-auto">
+        {children}
+      </main>
       <Footer />
     </div>
   );

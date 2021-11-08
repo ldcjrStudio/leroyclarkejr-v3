@@ -29,12 +29,12 @@
   }
   p,
   li {
-    @apply text-lg font-body leading-8 text-gray-700 dark:text-gray-200 transition-all duration-200;
+    @apply text-lg font-body leading-8 text-gray-700 dark:text-gray-400 transition-all duration-200;
   }
   .meta {
     @apply text-xs leading-6;
   }
   a {
-    @apply text-primary underline leading-8 cursor-pointer;
+    @apply text-primary font-bold underline leading-8 cursor-pointer;
   }
 }

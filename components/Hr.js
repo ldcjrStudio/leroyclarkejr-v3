@@ -1,6 +1,6 @@
 const Hr = () => {
   return (
-    <div className="relative py-16">
+    <div className="relative py-12">
       <div
         className="absolute inset-0 flex items-center justify-center"
         aria-hidden="true"

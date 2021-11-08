@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <header
       id="header"
-      className="bg-white bg-opacity-40 dark:bg-transparent transition-all duration-150"
+      className="bg-white bg-opacity-40 dark:bg-transparent transition-all duration-200"
     >
       <div className="left-icon ">
         <Link href="/">
@@ -59,20 +59,20 @@ const Header = () => {
           aria-label="open navigation menu"
         >
           <div
-            className={` ${open ? "bg-white " : "bg-black dark:bg-white"}`}
+            className={` ${open ? "bg-white " : "bg-offBlack dark:bg-white"}`}
             style={{
               transform: open ? "rotate(45deg)" : "rotate(0)",
             }}
           />
           <div
-            className="bg-black dark:bg-white"
+            className="bg-offBlack dark:bg-white"
             style={{
               opacity: open ? "0" : "1",
               transform: open ? "translateX(-20px)" : "translateX(0)",
             }}
           />
           <div
-            className={` ${open ? "bg-white " : "bg-black dark:bg-white"}`}
+            className={` ${open ? "bg-white " : "bg-offBlack dark:bg-white"}`}
             style={{
               transform: open ? "rotate(-45deg)" : "rotate(0)",
             }}

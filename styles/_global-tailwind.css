@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-white dark:bg-black;
+    @apply bg-white dark:bg-offBlack;
   }
   section {
     @apply mx-6;
