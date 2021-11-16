@@ -191,16 +191,13 @@ export const getStaticProps = async (context) => {
 
   const matchingPage = allPages.find((result) => {
     if (result.page.slug === context.params.slug) {
-      console.log("MATCH");
       const resultId = result.page.id;
       return resultId;
     } else {
-      console.log("no mathc ");
+      return false;
     }
-    return false;
   });
   const id = matchingPage.page.id;
-  console.log(id);
 
   const page = await getPage(id);
   const blocks = await getBlocks(id);
