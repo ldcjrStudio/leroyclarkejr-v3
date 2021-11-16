@@ -57,13 +57,12 @@ const Footer = () => {
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-400 dark:hover:text-secondary hover:text-primary"
-            >
+            <a key={item.name} href={item.href} className="">
               <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
+              <item.icon
+                className="h-6 w-6 text-gray-400 dark:hover:text-secondary hover:text-primary"
+                aria-hidden="true"
+              />
             </a>
           ))}
         </div>

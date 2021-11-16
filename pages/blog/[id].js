@@ -90,7 +90,7 @@ const renderBlock = (block) => {
     case "quote":
       return (
         <p>
-          <Text text={value.text} />
+          <Text text={value.text} key={Math.random()} />
         </p>
       );
     case "image":
@@ -135,7 +135,7 @@ export default function Post({ page, blocks }) {
       <section className="mt-20 w-screen">
         <div className="content-container max-w-3xl mx-auto">
           <article className="mt-12">
-            <h1>
+            <h1 className="mb-4">
               <Text text={page.properties.Name.title} />
             </h1>
             <section>

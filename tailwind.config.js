@@ -4,12 +4,13 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     fontFamily: {
-      serif: ["Helvetica", "Arial", "sans-serif"],
-      body: ["SourceSansPro", "Arial", "sans-serif"],
+      serif: ["Planc", "Arial", "sans-serif"],
+      body: ["Planc", "Arial", "sans-serif"],
     },
     extend: {
       colors: {
         primary: "#ef2a33",
+        primaryDark: "#ae0d14",
         secondary: "#090a3b",
         offBlack: "#151515",
         white: "#FCFEFC",

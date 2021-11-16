@@ -30,15 +30,15 @@ export default function Example() {
       checked={enabled}
       onChange={setEnabled}
       className={classNames(
-        enabled ? "bg-bluetiful" : "bg-primary",
-        "relative inline-flex flex-shrink-0 h-6 w-11 mr-6 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 "
+        enabled ? "bg-primary" : "bg-primaryDark",
+        "relative inline-flex flex-shrink-0 h-5 w-10 mr-6 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 "
       )}
     >
       <span className="sr-only">Use setting</span>
       <span
         className={classNames(
           enabled ? "translate-x-5" : "translate-x-0",
-          "pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
+          "pointer-events-none relative inline-block h-4 w-4 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"
         )}
       >
         <span

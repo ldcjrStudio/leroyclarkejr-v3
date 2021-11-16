@@ -46,20 +46,20 @@ export default function Home({ posts }) {
         <Container>
           <div className="container flex justify-center mx-auto">
             <div>
-              <h2 className="mb-6 text-center">
-                My name is Leroy and I'm a <br /> self-taught front end
-                engineer.
+              <h2 className="mb-8 text-center">
+                My name is Leroy and I'm a <br /> self-taught Front-end
+                Engineer.
               </h2>
-              <p className="mb-4">
+              <p className="mb-4 ">
                 Thank you for visiting my Digital Garden! This is my personal
-                website where I share my projects and drop notes & articles
-                about things I’m interested in. You’ll mostly see things about
-                web development, but my interests also include self-improvement,
-                entreprenuership, fitness, crypto, web 3.0, and music.
+                website where I share my projects and share content about things
+                I’m interested in. You’ll mostly see things about web
+                development, but I'm also interested in entreprenuership,
+                fitness, personal development, crypto, web 3.0, and music.
               </p>
               <p className="mb-4">
                 Check out my{" "}
-                <Link href="about">
+                <Link href="/about">
                   <a>About</a>
                 </Link>{" "}
                 page for more about me!
@@ -78,7 +78,7 @@ export default function Home({ posts }) {
       <section>
         <Container>
           <div className="heading ">
-            <h3 className="mb-8 text-left">Blog</h3>
+            <h3 className="mb-8 text-left">Recent Blog Posts</h3>
           </div>
           <div className="blogs-container">
             <ul className="mx-auto">
@@ -102,21 +102,28 @@ export default function Home({ posts }) {
                   return (
                     <li
                       key={post.id}
-                      className="rounded-lg bg-gray-800 dark:bg-gray-800 p-4 mb-4 mx-auto"
+                      className="rounded-lg bg-white dark:bg-gray-800 shadow-md p-6 mb-4 mx-auto"
                     >
-                      <h3>
-                        <Link href={`/blog/${post.id}`}>
-                          <h2>
-                            <Text text={post.properties.Name.title} />
-                          </h2>
-                        </Link>
-                      </h3>
-                      <p>{lastDate}</p>
-
-                      <p>{post.date}</p>
                       <Link href={`/blog/${post.id}`}>
-                        <a> Read post →</a>
+                        <h3 className="mb-6">
+                          <Text text={post.properties.Name.title} />
+                        </h3>
                       </Link>
+
+                      <div className="flex flex-row justify-between">
+                        <div className="flex flex-row items-center">
+                          <p className="mr-4 blog-tag">
+                            {post.properties.Tag.select.name}
+                          </p>
+                          <p className="text-sm text-black dark:text-white">
+                            {lastDate}
+                          </p>
+                        </div>
+                        <Link href={`/blog/${post.id}`}>
+                          <a className="text-sm font-normal">View Post</a>
+                        </Link>
+                      </div>
+                      {/* <p>Tags: {post.properties.Tags}</p> */}
                     </li>
                   );
                 }

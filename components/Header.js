@@ -44,7 +44,7 @@ const Header = () => {
     >
       <div className="left-icon ">
         <Link href="/">
-          <a className="font-bold text-black dark:text-white">
+          <a className="text-black font-body dark:text-white">
             Leroy Clarke Jr.
           </a>
         </Link>

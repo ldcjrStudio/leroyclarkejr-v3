@@ -2,6 +2,8 @@
 @import "./_global-tailwind.css";
 @import "./_typography";
 
+/* Webfont: Planc-Bold */
+
 //animations
 @keyframes scrollBtn {
   0% {
@@ -209,7 +211,7 @@ body {
       flex-direction: column;
       justify-content: space-around;
       width: 2rem;
-      height: 2rem;
+      height: 1.5rem;
       background: transparent;
       border: none;
       border-radius: 8px;
@@ -225,6 +227,7 @@ body {
         width: 2rem;
         height: 2px;
         // background: $white;
+        border-radius: 8px;
         transition: all 0.3s linear;
         position: relative;
         transform-origin: 1px;

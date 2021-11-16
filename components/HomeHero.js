@@ -51,7 +51,7 @@ const HomeHero = () => {
       </div>
 
       <div className="content text-center w-full">
-        <p id="typeit" className=" text-base md:text-xl"></p>
+        <h5 id="typeit" className=" text-base md:text-xl"></h5>
       </div>
     </section>
   );

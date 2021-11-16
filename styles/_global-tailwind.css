@@ -1,10 +1,100 @@
 @tailwind base;
 
 @layer base {
-  body {
-    @apply bg-white dark:bg-offBlack;
+  @font-face {
+    font-family: "PlancBold";
+    src: url("/public/fonts/Planc-Bold.woff") format("woff"),
+      url("/public/fonts/Planc-Bold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
   }
-  section {
-    @apply mx-6;
+
+  @font-face {
+    font-family: "PlancBold";
+    src: url("/public/fonts/Planc-BoldItalic.woff") format("woff"),
+      url("/public/fonts/Planc-BoldItalic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: "PlancSemiBold";
+    src: url("/public/fonts/Planc-SemiBold.woff") format("woff"),
+      url("/public/fonts/Planc-SemiBold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: "PlancSemiBold";
+    src: url("/public/fonts/Planc-SemiBoldItalic.woff") format("woff"),
+      url("/public/fonts/Planc-SemiBoldItalic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+  }
+  @font-face {
+    font-family: "PlancMedium";
+    src: url("/public/fonts/Planc-Medium.woff") format("woff"),
+      url("/public/fonts/Planc-Medium.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: "PlancMedium";
+    src: url("/public/fonts/Planc-MediumItalic.woff") format("woff"),
+      url("/public/fonts/Planc-MediumItalic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: "Planc";
+    src: url("/public/fonts/Planc-Regular.woff") format("woff"),
+      url("/public/fonts/Planc-Regular.woff2") format("woff2"); /* Modern Browsers */
+
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+  }
+  @font-face {
+    font-family: "Planc";
+    src: url("/public/fonts/Planc-RegularItalic.woff") format("woff"),
+      url("/public/fonts/Planc-RegularItalic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: "PlancLight";
+    src: url("/public/fonts/Planc-Light.woff") format("woff"),
+      url("/public/fonts/Planc-Light.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+  }
+
+  @font-face {
+    font-family: "PlancLight";
+    src: url("/public/fonts/Planc-LightItalic.woff") format("woff"),
+      url("/public/fonts/Planc-LightItalic.woff2") format("woff2");
+    font-style: italic;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white dark:bg-offBlack font-body;
+  }
+
+  .blog-tag {
+    @apply dark:text-white text-black border-2 border-black dark:border-white px-4 leading-4 py-1 text-sm rounded-full;
   }
 }
