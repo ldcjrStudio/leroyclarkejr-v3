@@ -163,11 +163,13 @@ export const getStaticPaths = async () => {
   const paths = [];
 
   database.forEach((page) => {
-    paths.push({
-      params: {
-        slug: slugify(page.properties.Name.title[0].plain_text).toLowerCase(),
-      },
-    });
+    if (page.properties.Status.select.name === "Live") {
+      paths.push({
+        params: {
+          slug: slugify(page.properties.Name.title[0].plain_text).toLowerCase(),
+        },
+      });
+    }
   });
   return {
     paths,
