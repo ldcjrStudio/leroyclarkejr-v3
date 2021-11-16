@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 // import { databaseId } from "../../pages/index.js";
 import styles from "./post.module.css";
+import slugify from "slugify";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
@@ -12,7 +13,7 @@ export const Text = ({ text }) => {
   if (!text) {
     return null;
   }
-  return text.map((value) => {
+  return text.map((value, i) => {
     const {
       annotations: { bold, code, color, italic, strikethrough, underline },
       text,
@@ -27,6 +28,7 @@ export const Text = ({ text }) => {
           underline ? "underline" : "",
         ].join(" ")}
         style={color !== "default" ? { color } : {}}
+        key={i}
       >
         {text.link ? <a href={text.link.url}>{text.content}</a> : text.content}
       </span>
@@ -47,27 +49,27 @@ const renderBlock = (block) => {
       );
     case "heading_2":
       return (
-        <h2>
+        <h2 key={id}>
           <Text text={value.text} />
         </h2>
       );
 
     case "heading_3":
       return (
-        <h3>
+        <h3 key={id}>
           <Text text={value.text} />
         </h3>
       );
     case "bulleted_list_item":
     case "numbered_list_item":
       return (
-        <li>
+        <li key={id}>
           <Text text={value.text} />
         </li>
       );
     case "to_do":
       return (
-        <div>
+        <div key={id}>
           <label htmlFor={id} className="flex flex-nowrap items-center">
             <input type="checkbox" id={id} defaultChecked={value.checked} />{" "}
             <p className="ml-2">
@@ -78,7 +80,7 @@ const renderBlock = (block) => {
       );
     case "toggle":
       return (
-        <details>
+        <details key={id}>
           <summary>
             <Text text={value.text} />
           </summary>
@@ -89,13 +91,16 @@ const renderBlock = (block) => {
       );
     case "quote":
       return (
-        <p>
+        <p key={id}>
           <Text text={value.text} key={Math.random()} />
         </p>
       );
     case "image":
       return (
-        <div className="img-container mx-auto relative w-full max-w-xs h-80">
+        <div
+          key={id}
+          className="img-container mx-auto relative w-full max-w-xs h-80"
+        >
           <Image
             layout="fill"
             src={value.external.url}
@@ -125,7 +130,6 @@ export default function Post({ page, blocks }) {
     return <div />;
   }
 
-  console.log(blocks);
   return (
     <div>
       <Head>
@@ -155,16 +159,49 @@ export default function Post({ page, blocks }) {
 
 export const getStaticPaths = async () => {
   const database = await getDatabase(databaseId);
+
+  const paths = [];
+
+  database.forEach((page) => {
+    paths.push({
+      params: {
+        slug: slugify(page.properties.Name.title[0].plain_text).toLowerCase(),
+      },
+    });
+  });
   return {
-    paths: database.map((page) => ({
-      params: { id: page.properties.Name.title[0].plain_text },
-    })),
+    paths,
     fallback: true,
   };
 };
 
 export const getStaticProps = async (context) => {
-  const { id } = context.params;
+  const database = await getDatabase(databaseId);
+
+  let allPages = [];
+
+  database.forEach((page) => {
+    allPages.push({
+      page: {
+        id: page.id,
+        slug: slugify(page.properties.Name.title[0].plain_text).toLowerCase(),
+      },
+    });
+  });
+
+  const matchingPage = allPages.find((result) => {
+    if (result.page.slug === context.params.slug) {
+      console.log("MATCH");
+      const resultId = result.page.id;
+      return resultId;
+    } else {
+      console.log("no mathc ");
+    }
+    return false;
+  });
+  const id = matchingPage.page.id;
+  console.log(id);
+
   const page = await getPage(id);
   const blocks = await getBlocks(id);
 

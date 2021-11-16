@@ -55,7 +55,7 @@
   }
 
   @font-face {
-    font-family: "Planc";
+    font-family: "PlancRegular";
     src: url("/public/fonts/Planc-Regular.woff") format("woff"),
       url("/public/fonts/Planc-Regular.woff2") format("woff2"); /* Modern Browsers */
 
@@ -64,7 +64,7 @@
     text-rendering: optimizeLegibility;
   }
   @font-face {
-    font-family: "Planc";
+    font-family: "PlancRegular";
     src: url("/public/fonts/Planc-RegularItalic.woff") format("woff"),
       url("/public/fonts/Planc-RegularItalic.woff2") format("woff2");
     font-style: italic;

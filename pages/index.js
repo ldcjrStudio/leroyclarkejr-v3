@@ -2,17 +2,18 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "../components/Container";
+import slugify from "slugify";
 
 import HomeHero from "../components/HomeHero";
 import Hr from "../components/Hr";
 
-import { Text } from "../pages/blog/[id].js";
+import { Text } from "./blog/[slug].js";
 import { getDatabase } from "../lib/notion";
 
 export const databaseId = process.env.NOTION_DATABASE_ID;
 
 export default function Home({ posts }) {
-  console.log(posts[0].properties);
+  // console.log(posts[0].properties);
   return (
     <>
       <HomeHero />
@@ -119,7 +120,11 @@ export default function Home({ posts }) {
                             {lastDate}
                           </p>
                         </div>
-                        <Link href={`/blog/${post.id}`}>
+                        <Link
+                          href={`/blog/${slugify(
+                            post.properties.Name.title[0].plain_text
+                          ).toLowerCase()}`}
+                        >
                           <a className="text-sm font-normal">View Post</a>
                         </Link>
                       </div>
