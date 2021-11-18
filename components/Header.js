@@ -115,6 +115,7 @@ const Header = () => {
             <a
               href="https://personal-things.s3.amazonaws.com/LeroyClarkejr-Aug.pdf"
               target="_blank"
+              rel="noreferrer"
             >
               Resume
             </a>
@@ -128,6 +129,7 @@ const Header = () => {
               <a
                 target="_blank"
                 href="https://www.instagram.com/leroyclarkejr"
+                rel="noreferrer"
                 // to="https://www.instagram.com/leroyclarkejr"
               >
                 <InstagramIcon fontSize="large" />
@@ -135,6 +137,7 @@ const Header = () => {
               <a
                 target="_blank"
                 href="https://github.com/ldcjrStudio"
+                rel="noreferrer"
 
                 // to="https://github.com/ldcjrStudio"
               >
@@ -143,6 +146,7 @@ const Header = () => {
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/leroy-clarke-jr/"
+                rel="noreferrer"
                 // to="https://www.linkedin.com/in/leroy-clarke-jr/"
               >
                 <LinkedInIcon fontSize="large" />
@@ -151,6 +155,7 @@ const Header = () => {
               <a
                 target="_blank"
                 href="https://www.facebook.com/leroyclarkejr"
+                rel="noreferrer"
                 // to="https://www.facebook.com/leroyclarkejr"
               >
                 <FacebookIcon fontSize="large" />

@@ -105,7 +105,7 @@ export default function Home({ posts }) {
                       key={post.id}
                       className="rounded-lg bg-white dark:bg-gray-800 shadow-md p-6 mb-4 mx-auto"
                     >
-                      <Link href={`/blog/${post.id}`}>
+                      <Link href={`/blog/${post.id}`} passHref>
                         <h3 className="mb-6">
                           <Text text={post.properties.Name.title} />
                         </h3>

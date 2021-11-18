@@ -21,6 +21,7 @@ export default function Portfolio({ projects }) {
                   <div className="img-container w-300px h-100">
                     <Image
                       src={project.fields.Photos[0].url}
+                      alt={project.fields.Name}
                       layout="responsive"
                       width={project.fields.Photos[0].width}
                       height={project.fields.Photos[0].height}
